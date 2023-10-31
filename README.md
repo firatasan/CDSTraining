@@ -71,9 +71,9 @@ define view demo_cds_sql_functions_num
   (2+3-4*3)                        as value12, // [Ans:-7]
 
   cast( 2+3-4*3 as abap.fltp)/ 2.0 as value13  // [Ans:-3.5]
-```
-// As ‘/’ only support fltp data type, we changed to fltp
 
+// As ‘/’ only support fltp data type, we changed to fltp
+```
 
 
 
