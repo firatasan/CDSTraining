@@ -2,13 +2,7 @@
 CDS Training 
 
 ## Numeric Functions
-Round          yanindaki rakam kadar yuvarlama
-Ceil           yukariya tam sayiya yuvarla
-Floor          asagiya tam sayiya yuvarla
-Div            yandaki sayiya bolumu
-Division       yandaki sayiya bolumu ve virgulden sonra kac sayi
-Mod            yanindaki sayi kadar mod alma
-Abs            mutlak deger
+
 
 ```abap
 @AbapCatalog.sqlViewName: 'DEMO_CDS_NUMFUNC'
@@ -17,13 +11,13 @@ define view demo_cds_sql_functions_num
   as select from
     demo_expressions
     {
-      abs(       num1          ) as r_abs,
-      ceil(      fltp1         ) as r_ceil,
-      floor(     dec1          ) as r_floor,
-      div(       num1, num2    ) as r_div,
-      mod(       num1, num2    ) as r_mod,
-      division(  dec2, dec3, 3 ) as r_division,
-      round(     dec3, 2       ) as r_round
+      abs( num1 )               as r_abs,         // Abs mutlak deger  
+      ceil( fltp1 )             as r_ceil,        //Ceil yukariya tam sayiya yuvarla  
+      floor( dec1 )             as r_floor,       // Floor asagiya tam sayiya yuvarla 
+      div( num1, num2 )         as r_div,         // Div yandaki sayiya bolumu 
+      mod( num1, num2 )         as r_mod,         // Mod yanindaki sayi kadar mod alma 
+      division( dec2, dec3, 3 ) as r_division,    // Division yandaki sayiya bolumu ve virgulden sonra kac sayi 
+      round( dec3, 2 )          as r_round        // Round yanindaki rakam kadar yuvarlama
     }
 ```
 
