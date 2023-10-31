@@ -11,6 +11,11 @@ define view demo_cds_sql_functions_num
   as select from
     demo_expressions
     {
+      matnr,
+      miktar,
+      
+
+
       abs( num1 )               as r_abs,         // Abs mutlak deger  
       ceil( fltp1 )             as r_ceil,        //Ceil yukariya tam sayiya yuvarla  
       floor( dec1 )             as r_floor,       // Floor asagiya tam sayiya yuvarla 
@@ -18,6 +23,18 @@ define view demo_cds_sql_functions_num
       mod( num1, num2 )         as r_mod,         // Mod yanindaki sayi kadar mod alma 
       division( dec2, dec3, 3 ) as r_division,    // Division yandaki sayiya bolumu ve virgulden sonra kac sayi 
       round( dec3, 2 )          as r_round        // Round yanindaki rakam kadar yuvarlama
+
+
+  abs( miktar )            as r_abs, // Abs mutlak deger
+  ceil( miktar )           as r_ceil, //Ceil yukariya tam sayiya yuvarla
+  floor( miktar )          as r_floor, // Floor asagiya tam sayiya yuvarla
+  div( miktar, 5 )         as r_div,      // Div yandaki sayiya bolumu
+  mod( miktar, 3 )         as r_mod,      // Mod yanindaki sayi kadar mod alma
+  division( miktar, 3, 2 ) as r_division, // Division yandaki sayiya bolumu ve virgulden sonra kac sayi
+  round( dec3, 2 )         as r_round // Round yanindaki rakam kadar yuvarlama
+
+      // Ic ice de kullanim mumkun:
+      mod( ceil(miktar), 5 )         as r_mod,
     }
 ```
 
