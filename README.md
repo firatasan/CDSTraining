@@ -13,7 +13,6 @@ define view demo_cds_sql_functions_num
     {
       matnr,
       miktar,
-      
 
 
       abs( num1 )               as r_abs,         // Abs mutlak deger  
