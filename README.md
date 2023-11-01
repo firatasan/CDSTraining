@@ -3,13 +3,13 @@ CDS Training
 
 ## Numeric Functions
 
-- Abs mutlak deger  
-- Ceil yukariya tam sayiya yuvarla  
-- Floor asagiya tam sayiya yuvarla 
-- Div yandaki sayiya bolumu 
-- Mod yanindaki sayi kadar mod alma 
-- Division yandaki sayiya bolumu ve virgulden sonra kac sayi 
-- Round yanindaki rakam kadar yuvarlama
+- Abs       : mutlak deger  
+- Ceil      : yukariya tam sayiya yuvarla  
+- Floor     : asagiya tam sayiya yuvarla 
+- Div       : yandaki sayiya bolumu 
+- Mod       : yanindaki sayi kadar mod alma 
+- Division  : yandaki sayiya bolumu ve virgulden sonra kac sayi 
+- Round     : yanindaki rakam kadar yuvarlama
 
 
 ```abap
