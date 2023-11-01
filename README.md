@@ -34,6 +34,8 @@ define view demo_cds_sql_functions_num
 
       // Ic ice de kullanim mumkun:
       mod( ceil(miktar), 5 )         as r_mod,
+
+      miktar + 2               as add_miktar,
     }
 ```
 
@@ -43,35 +45,27 @@ define view demo_cds_sql_functions_num
 //Division
 
   division(10,3,4)                 as value1, // [Ans:3.3333]
-
   div(55,5)                        as value2, // [Ans:11]
-
   (10.5  / 3.2)                    as value3, // [Ans:3.28125]
 
 // multiplication
 
   (10  * 3)                        as value4, // [Ans:30]
-
   (10 *6 * 3)                      as value5, // [Ans:180]
-
 //Modulo
 
   mod(2,3)                         as value6, // [Ans:2]
 
 // Addition
 
-  (2 +3)                           as value7, // [Ans:5]
-
+  (2 + 3)                           as value7, // [Ans:5]
   (2.2 + 3.7)                      as value8, // [Ans:5.9]
-
 // (2 + 3.7) as value8--> is not possible as both are different data types
 
 //subtraction
 
   (2 -3)                           as value9, // [Ans:-1]
-
   (21 -1)                          as value10, // [Ans:20]
-
   (21.5 - 1.7)                     as value11, // [Ans:1.98]
 
 //(21.5 - 1) as value11--> is not possible as both are different data types
