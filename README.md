@@ -82,3 +82,50 @@ define view demo_cds_sql_functions_num
 
 
 ## String Functions
+
+concat              birlestirme
+concat_with_space   bosluklu birlestirme       
+Substring           parca alma
+Length              uzunluk
+Left                soldan karakter al
+Right               sagdan karakter al
+Ltrim               soldan eslesen karakteri sil (genelde bolsuk)
+Rtrim               sagdan eslesen karakteri sil (genelde bolsuk)
+
+```abap
+      concat(col1,col2)                 as concat1,
+      concat(col1, ',')                 as concat2,
+      concat(concat(col1, ','), col2)   as concat3,
+      concat_with_space(col1, col2, 10) as concatwithspace,
+      substring(col2,2,2)               as substringcol,
+      length(col2)                      as length_col,
+      left(col2,2)                      as left_col2,
+      right(col2,2)                     as right_col2,
+      ltrim(col2, 'F')                  as leftrim_col,
+      rtrim(col2, 'D')                  as righttrim_col
+```
+
+## Date Functions
+
+DATS_IS_VALID(date)                      gecerlilik kontrolu
+DATS_DAYS_BETWEEN(date1,date2)           iki tarih arasindaki fark
+DATS_ADD_DAYS(date,days,on_error)        gün ekleme
+DATS_ADD_DAYS(date,days,on_error)        gün cikarma eksi gün ekleme
+DATS_ADD_MONTHS(date,months,on_error)    ay ekleme
+DATS_ADD_MONTHS(date,months,on_error)    ay cikarma eksi ay ekleme
+
+```abap
+  key col2                                                      as Col2,
+      datecol                                                   as Datecol,
+
+      dats_is_valid(datecol)                                    as disvalid1, // return 1
+      dats_is_valid(cast('20230101' as abap.dats))              as disvalid2, // return 1
+      dats_is_valid(cast('01012023' as abap.dats))              as disvalid3, // return 0
+      dats_is_valid(cast('12345678' as abap.dats))              as disvalid4, // return 0
+
+      dats_days_between(datecol, cast('20230101' as abap.dats)) as ddbtw,
+      dats_add_days(datecol, 10, 'NULL') as ongunEkli,
+      dats_add_days(datecol, -10, 'NULL') as ongunCik,
+      dats_add_months(datecol, 3, 'NULL') as ucAyEkli,
+      dats_add_months(datecol, -3, 'NULL') as ucAyCik
+```
