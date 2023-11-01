@@ -124,8 +124,8 @@ DATS_ADD_MONTHS(date,months,on_error)    ay cikarma eksi ay ekleme
       dats_is_valid(cast('12345678' as abap.dats))              as disvalid4, // return 0
 
       dats_days_between(datecol, cast('20230101' as abap.dats)) as ddbtw,
-      dats_add_days(datecol, 10, 'NULL') as ongunEkli,
-      dats_add_days(datecol, -10, 'NULL') as ongunCik,
-      dats_add_months(datecol, 3, 'NULL') as ucAyEkli,
-      dats_add_months(datecol, -3, 'NULL') as ucAyCik
+      dats_add_days(datecol, 10, 'NULL')                        as ongunEkli,
+      dats_add_days(datecol, -10, 'NULL')                       as ongunCik,
+      dats_add_months(datecol, 3, 'NULL')                       as ucAyEkli,
+      dats_add_months(datecol, -3, 'NULL')                      as ucAyCik
 ```
