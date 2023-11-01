@@ -83,14 +83,14 @@ define view demo_cds_sql_functions_num
 
 ## String Functions
 
-concat              birlestirme
-concat_with_space   bosluklu birlestirme       
-Substring           parca alma
-Length              uzunluk
-Left                soldan karakter al
-Right               sagdan karakter al
-Ltrim               soldan eslesen karakteri sil (genelde bolsuk)
-Rtrim               sagdan eslesen karakteri sil (genelde bolsuk)
+- concat              birlestirme
+- concat_with_space   bosluklu birlestirme       
+- Substring           parca alma
+- Length              uzunluk
+- Left                soldan karakter al
+- Right               sagdan karakter al
+- Ltrim               soldan eslesen karakteri sil (genelde bolsuk)
+- Rtrim               sagdan eslesen karakteri sil (genelde bolsuk)
 
 ```abap
       concat(col1,col2)                 as concat1,
@@ -107,12 +107,12 @@ Rtrim               sagdan eslesen karakteri sil (genelde bolsuk)
 
 ## Date Functions
 
-DATS_IS_VALID(date)                      gecerlilik kontrolu
-DATS_DAYS_BETWEEN(date1,date2)           iki tarih arasindaki fark
-DATS_ADD_DAYS(date,days,on_error)        gün ekleme
-DATS_ADD_DAYS(date,days,on_error)        gün cikarma eksi gün ekleme
-DATS_ADD_MONTHS(date,months,on_error)    ay ekleme
-DATS_ADD_MONTHS(date,months,on_error)    ay cikarma eksi ay ekleme
+- DATS_IS_VALID(date)                      gecerlilik kontrolu
+- DATS_DAYS_BETWEEN(date1,date2)           iki tarih arasindaki fark
+- DATS_ADD_DAYS(date,days,on_error)        gün ekleme
+- DATS_ADD_DAYS(date,days,on_error)        gün cikarma eksi gün ekleme
+- DATS_ADD_MONTHS(date,months,on_error)    ay ekleme
+- DATS_ADD_MONTHS(date,months,on_error)    ay cikarma eksi ay ekleme
 
 ```abap
   key col2                                                      as Col2,
