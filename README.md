@@ -1,8 +1,20 @@
 # CDSTraining
 CDS Training 
+
 ## Numeric Functions
 ## String Functions
 ## Date Functions
+
+
+- [ Numeric Functions ](#NumericFunctions)
+- [String Functions](#StringFunctions)
+- [Date Functions](#DateFunctions)
+- [Cast Functions](#list)
+
+
+
+
+
 
 ## Numeric Functions
 
