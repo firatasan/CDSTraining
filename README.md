@@ -1,5 +1,8 @@
 # CDSTraining
 CDS Training 
+## Numeric Functions
+## String Functions
+## Date Functions
 
 ## Numeric Functions
 
