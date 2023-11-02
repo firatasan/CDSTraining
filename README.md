@@ -1,7 +1,7 @@
 # CDSTraining
 CDS Training 
 
-- [ Numeric Functions ](#numeric-functions-1)
+- [ Numeric Functions ](#numeric-functions)
 - [String Functions](#string-functions)
 - [Date Functions](#date-functions)
 - [Cast Functions](#cast-functions)
