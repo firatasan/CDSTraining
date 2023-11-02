@@ -7,9 +7,9 @@ CDS Training
 
 
 - [ Numeric Functions ](#numeric-functions-1)
-- [String Functions](#StringFunctions)
-- [Date Functions](#DateFunctions)
-- [Cast Functions](#list)
+- [String Functions](#string-functions-1)
+- [Date Functions](#date-functions-1)
+- [Cast Functions](#cast-functions-1)
 
 
 
