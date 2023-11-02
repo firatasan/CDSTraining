@@ -6,7 +6,7 @@ CDS Training
 ## Date Functions
 
 
-- [ Numeric Functions ](#NumericFunctions)
+- [ Numeric Functions ](#numeric-functions-1)
 - [String Functions](#StringFunctions)
 - [Date Functions](#DateFunctions)
 - [Cast Functions](#list)
