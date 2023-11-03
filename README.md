@@ -5,6 +5,7 @@ CDS Training
 - [String Functions](#string-functions)
 - [Date Functions](#date-functions)
 - [Cast Functions](#cast-functions)
+- [Aggregate Functions](#aggregate-functions).
 
 
 
