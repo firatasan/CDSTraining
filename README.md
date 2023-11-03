@@ -248,6 +248,7 @@ INNER JOIN order_details ON orders.order_id = order_details.order_id;
 ```
   <br>
     Sonuc
+  <br>  
     <img src="./ScreenShots/innerJoinSonuc.jpg" alt="Tablo 2" >
 
 </details>
