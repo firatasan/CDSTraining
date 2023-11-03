@@ -153,7 +153,7 @@ define view demo_cds_sql_functions_num
 
 ## Cast Functions
 
-```cds
+```abap
       cast( col3 as abap.char( 10 ))  as col3Char,
       cast( col3 as abap.dec( 8, 1 )) as col3dec,
       '17091983'                      as colTest1,
