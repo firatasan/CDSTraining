@@ -171,7 +171,7 @@ define view demo_cds_sql_functions_num
 - Count( Distinct )     tekrar etmeyen kac satiri var
 
 
-```abap
+```CDS
 {
   key vbeln                  as Vbeln,
       //key posnr as Posnr,
