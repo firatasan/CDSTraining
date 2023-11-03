@@ -249,7 +249,7 @@ INNER JOIN order_details ON orders.order_id = order_details.order_id;
   <br>
     Sonuc
   <br>  
-    <img src="./ScreenShots/innerJoinSonuc.jpg" alt="Tablo 2" >
+    <img src="./ScreenShots/innerJoinSonuc.jpg" alt="Sonuc" >
 
 </details>
 
@@ -273,6 +273,35 @@ define view Z_LeftJoinExample as
 };
 
 ```
+
+<details>
+  <summary>Detay Bilgi</summary>
+  <br>
+    LEFT JOIN, soldaki (ilk) tablodaki tüm satırları ve eşleşen sağdaki (ikinci) tablodan gelen satırları içeren sonuçlar üretir. Eşleşme olmadığında, sağ tablo alanları NULL olarak doldurulur. 
+  <br>
+    Tablo 1 (students):
+  <br>
+  <img src="./ScreenShots/leftTablo1.jpg" alt="Tablo 1" >
+  <br>
+    Tablo 2 (grades)
+  <br>
+    <img src="./ScreenShots/leftTablo2.jpg" alt="Tablo 2" >
+  <br>
+  <br>
+  
+```sql
+SELECT students.student_id, student_name, department, course, grade
+FROM students
+LEFT JOIN grades ON students.student_id = grades.student_id;
+
+```
+  <br>
+    Sonuc
+  <br>  
+    <img src="./ScreenShots/SonucLeftTablo.jpg" alt="Sonuc Left" >
+
+</details>
+
 #### Right Join Example
 
 ```abap
@@ -295,6 +324,35 @@ define view Z_RightJoinExample as
 
 ```
 
+<details>
+  <summary>Detay Bilgi</summary>
+  <br>
+    RIGHT JOIN, RIGHT JOIN ile birleştirilen tablonun tüm satırlarını ve eşleşen sol tablodan gelen satırları içerir. Eşleşme olmadığında, sol tablo alanları NULL olarak doldurulur. RIGHT JOIN, LEFT JOIN'ın sağa çevrilmiş halidir.
+  <br>
+    Tablo 1 (authors)
+  <br>
+  <img src="./ScreenShots/rightTablo1.jpg" alt="Tablo 1" >
+  <br>
+    Tablo 2 (books)
+  <br>
+    <img src="./ScreenShots/lefttablo2.jpg" alt="Tablo 2" >
+  <br>
+  <br>
+  
+```sql
+SELECT authors.author_id, author_name, title
+FROM authors
+RIGHT JOIN books ON authors.author_id = books.author_id;
+
+
+```
+  <br>
+    Sonuc
+  <br>  
+    <img src="./ScreenShots/SonucLeftTablo.jpg" alt="Sonuc Left" >
+
+</details>
+
 #### Cross Join Example
 
 ```abap
@@ -314,6 +372,34 @@ define view Z_CrossJoinExample as
 };
 
 ```
+
+<details>
+  <summary>Detay Bilgi</summary>
+  <br>
+    Cross join (çapraz birleştirme), SQL'de iki tabloyu tüm kombinasyonlarıyla birleştirmek için kullanılan bir birleştirme türüdür. CROSS JOIN, her satırın ilk tabloyla her satırın ikinci tabloyu birleştirdiği bir çapraz ürün (cross product) oluşturur. Sonuç, bir tablonun her satırını diğer tablonun her satırıyla eşleştirir. Cross join, genellikle büyük veri setleri üzerinde çalışırken dikkatli kullanılmalıdır, çünkü her iki tablonun tüm kombinasyonlarını oluşturur ve sonuç çok büyük olabilir.
+  <br>
+    Tablo 1 (employees)
+  <br>
+  <img src="./ScreenShots/crosstablo1.jpg" alt="Tablo 1" >
+  <br>
+    Tablo 1 (departments)
+  <br>
+    <img src="./ScreenShots/crosstablo2.jpg" alt="Tablo 2" >
+  <br>
+  <br>
+  
+```sql
+SELECT employee_name, department_name
+FROM employees
+CROSS JOIN departments;
+
+```
+  <br>
+    Sonuc
+  <br>  
+    <img src="./ScreenShots/crosssonuc.jpg" alt="Sonuc Cross" >
+
+</details>
 
 ### Union
 
