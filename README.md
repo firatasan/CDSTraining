@@ -10,6 +10,10 @@ CDS Training
 - [Aggregate Functions](#aggregate-functions)
 - [Join Union Associations](#join-union-associations)
   - [Join](#join-union-associations)
+    - [inner join example](#inner-join-example)
+    - [left join example](#left-join-example)
+    - [right join example](#right-join-example)
+    - [cross join example](#cross-join-example)
 
 
 
