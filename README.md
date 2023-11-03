@@ -7,8 +7,9 @@ CDS Training
 - [String Functions](#string-functions)
 - [Date Functions](#date-functions)
 - [Cast Functions](#cast-functions)
-- [Aggregate Functions](#aggregate-functions).
+- [Aggregate Functions](#aggregate-functions)
 - [Join Union Associations](#join-union-associations)
+- [Join](##join-union-associations)
 
 
 
