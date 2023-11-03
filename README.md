@@ -227,6 +227,29 @@ define view Z_InnerJoinExample as
 };
 ```
 
+<details>
+  <summary>Detay Bilgi</summary>
+  <br>
+    INNER JOIN, iki tabloyu belirli bir koşula göre birleştirmek için kullanılır. Bu koşul, eşleşen kayıtları bulmak için kullanılır. İki tablonun birleştirildiği yerde yalnızca eşleşen verilere sahip satırlar döndürülür.
+  <br>
+    Tablo 1
+  <img src="./ScreenShots/tablo1Orders.jpg" alt="Tablo 1" >
+  <br>
+    Tablo2
+    <img src="./ScreenShots/tablo2.jpg" alt="Tablo 2" >
+  <br>
+    ```sql
+    SELECT orders.order_id, customer_id, order_date, product_id, quantity
+FROM orders
+INNER JOIN order_details ON orders.order_id = order_details.order_id;
+
+    ```
+  <br>
+    Sonuc
+    <img src="./ScreenShots/innerJoinSonuc.jpg" alt="Tablo 2" >
+
+</details>
+
 #### Left Join Example
 ```abap
 @AbapCatalog.sqlViewName: 'ZLEFTJOINEXAMPLE'
