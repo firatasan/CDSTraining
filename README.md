@@ -185,12 +185,11 @@ define view demo_cds_sql_functions_num
 }
 
 
-
-
-
-<p align="right"><a href="#top">⬆️ back to top</a></p>
-
 group by
   vbeln
 ```
 
+
+
+
+<p align="right"><a href="#top">⬆️ back to top</a></p>
