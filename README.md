@@ -8,6 +8,7 @@ CDS Training
 - [Date Functions](#date-functions)
 - [Cast Functions](#cast-functions)
 - [Aggregate Functions](#aggregate-functions).
+- [Join Union Associations](#join-union-associations)
 
 
 
