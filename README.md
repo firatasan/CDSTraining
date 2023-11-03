@@ -156,3 +156,32 @@ define view demo_cds_sql_functions_num
       '17091983'                      as colTest1,
       cast('17091983' as abap.dats)   as colTest2
 ```
+
+## Aggregate Functions
+
+- Goub by yapmadan calismiyor ve mümkünse sadece kullanacagimiz fieldleri secmeliyiz
+- Max                   O grubun en buyuk degerini alir
+- Min                   O grubun en kucuk degerini alir
+- Sum                   O grubun degerlerini toplar
+- Avg                   O grubun degerlerinin ortalamasini alir
+- Count                 kac satiri var
+- Count( Distinct )     tekrar etmeyen kac satiri var
+
+
+```abap
+{
+  key vbeln                  as Vbeln,
+      //key posnr as Posnr,
+      //kwmeng as Kwmeng,
+      max(kwmeng)            as kwmeng_max,
+      min(kwmeng)            as kwmeng_min,
+      sum(kwmeng)            as kwmeng_sum,
+      avg(kwmeng)            as kwmeng_avg,
+      count(*)               as kwmeng_count1,
+      count(distinct kwmeng) as kwmeng_count2
+}
+
+group by
+  vbeln
+```
+
