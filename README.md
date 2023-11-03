@@ -193,10 +193,10 @@ group by
 
 ### Join
 
--Inner join : Belirli bir field iki tablolda da olmak zorundadir. Bu Fielde gore eslesen verileri birlestirerek dondurur.
--Left join  : Bir tablonun alanlari diger tablonun alanlarina ekler, ortak field yoksa eklenen tablonun fieldlerindeki degerler null olarak gelir.
--Right join : Bir tablonun alanlari diger tablonun alanlarina ekler, ortak field yoksa eklenen tablonun fieldlerindeki degerler null olarak gelir.
--Cross join : iki tabloyu tüm kombinasyonlarıyla birleştirmek için kullanılan bir birleştirme türüdür. CROSS JOIN, her satırın ilk tabloyla her satırın ikinci tabloyu birleştirdiği bir çapraz ürün (cross product) oluşturur. Sonuç, bir tablonun her satırını diğer tablonun her satırıyla eşleştirir. Cross join, genellikle büyük veri setleri üzerinde çalışırken dikkatli kullanılmalıdır, çünkü her iki tablonun tüm kombinasyonlarını oluşturur ve sonuç çok büyük olabilir.
+- Inner join : Belirli bir field iki tablolda da olmak zorundadir. Bu Fielde gore eslesen verileri birlestirerek dondurur.
+- Left join  : Bir tablonun alanlari diger tablonun alanlarina ekler, ortak field yoksa eklenen tablonun fieldlerindeki degerler null olarak gelir.
+- Right join : Bir tablonun alanlari diger tablonun alanlarina ekler, ortak field yoksa eklenen tablonun fieldlerindeki degerler null olarak gelir.
+- Cross join : iki tabloyu tüm kombinasyonlarıyla birleştirmek için kullanılan bir birleştirme türüdür. CROSS JOIN, her satırın ilk tabloyla her satırın ikinci tabloyu birleştirdiği bir çapraz ürün (cross product) oluşturur. Sonuç, bir tablonun her satırını diğer tablonun her satırıyla eşleştirir. Cross join, genellikle büyük veri setleri üzerinde çalışırken dikkatli kullanılmalıdır, çünkü her iki tablonun tüm kombinasyonlarını oluşturur ve sonuç çok büyük olabilir.
 
 
 
