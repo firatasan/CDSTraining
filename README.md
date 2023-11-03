@@ -198,8 +198,88 @@ group by
 - Right join   : Bir tablonun alanlari diger tablonun alanlarina ekler, ortak field yoksa eklenen tablonun fieldlerindeki degerler null olarak gelir.
 - Cross join   : iki tabloyu tüm kombinasyonlarıyla birleştirmek için kullanılan bir birleştirme türüdür. CROSS JOIN, her satırın ilk tabloyla her satırın ikinci tabloyu birleştirdiği bir çapraz ürün (cross product) oluşturur. Sonuç, bir tablonun her satırını diğer tablonun her satırıyla eşleştirir. Cross join, genellikle büyük veri setleri üzerinde çalışırken dikkatli kullanılmalıdır, çünkü her iki tablonun tüm kombinasyonlarını oluşturur ve sonuç çok büyük olabilir.
 
+#### Inner Join Example
 
+```abap
+@AbapCatalog.sqlViewName: 'ZINNERJOINEXAMPLE'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Inner Join Example'
 
+define view Z_InnerJoinExample as
+  select from scarr as airline
+    inner join spfli as flight
+    on airline.carrid = flight.carrid
+{
+  airline.carrid,
+  airline.carrname,
+  flight.connid,
+  flight.cityfrom,
+  flight.cityto
+};
+```
+
+#### Left Join Example
+```abap
+@AbapCatalog.sqlViewName: 'ZLEFTJOINEXAMPLE'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Left Join Example'
+
+define view Z_LeftJoinExample as
+  select from scarr as airline
+    left outer join spfli as flight
+    on airline.carrid = flight.carrid
+{
+  airline.carrid,
+  airline.carrname,
+  flight.connid,
+  flight.cityfrom,
+  flight.cityto
+};
+
+```
+#### Right Join Example
+
+```abap
+@AbapCatalog.sqlViewName: 'ZRIGHTJOINEXAMPLE'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Right Join Example'
+
+define view Z_RightJoinExample as
+  select from scarr as airline
+    right outer join spfli as flight
+    on airline.carrid = flight.carrid
+{
+  airline.carrid,
+  airline.carrname,
+  flight.connid,
+  flight.cityfrom,
+  flight.cityto
+};
+
+```
+
+#### Cross Join Example
+
+```abap
+@AbapCatalog.sqlViewName: 'ZCROSSJOINEXAMPLE'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Cross Join Example'
+
+define view Z_CrossJoinExample as
+  select from scarr as airline, spfli as flight
+{
+  airline.carrid,
+  airline.carrname,
+  flight.connid,
+  flight.cityfrom,
+  flight.cityto
+};
+
+```
 
 ### Union
 
