@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # CDSTraining
 CDS Training 
 
@@ -181,6 +183,12 @@ define view demo_cds_sql_functions_num
       count(*)               as kwmeng_count1,
       count(distinct kwmeng) as kwmeng_count2
 }
+
+
+
+
+
+<p align="right"><a href="#top">⬆️ back to top</a></p>
 
 group by
   vbeln
