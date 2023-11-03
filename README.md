@@ -331,11 +331,11 @@ define view Z_RightJoinExample as
   <br>
     Tablo 1 (authors)
   <br>
-  <img src="./ScreenShots/rightTablo1.jpg" alt="Tablo 1" >
+  <img src="./ScreenShots/righttablo1.jpg" alt="Tablo 1" >
   <br>
     Tablo 2 (books)
   <br>
-    <img src="./ScreenShots/lefttablo2.jpg" alt="Tablo 2" >
+    <img src="./ScreenShots/righttablo2.jpg" alt="Tablo 2" >
   <br>
   <br>
   
@@ -349,7 +349,7 @@ RIGHT JOIN books ON authors.author_id = books.author_id;
   <br>
     Sonuc
   <br>  
-    <img src="./ScreenShots/SonucLeftTablo.jpg" alt="Sonuc Left" >
+    <img src="./ScreenShots/rightsonuctablo.jpg" alt="Sonuc Left" >
 
 </details>
 
