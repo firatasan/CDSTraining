@@ -14,6 +14,8 @@ CDS Training
     - [left join example](#left-join-example)
     - [right join example](#right-join-example)
     - [cross join example](#cross-join-example)
+  - [Union](#union)
+  - [Associations](#associations)
 
 
 
