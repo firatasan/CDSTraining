@@ -285,7 +285,7 @@ define view Z_LeftJoinExample as
   <br>
     Tablo 2 (grades)
   <br>
-    <img src="./ScreenShots/leftTablo2.jpg" alt="Tablo 2" >
+    <img src="./ScreenShots/lefttablo2.jpg" alt="Tablo 2" >
   <br>
   <br>
   
