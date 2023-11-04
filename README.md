@@ -403,6 +403,161 @@ CROSS JOIN departments;
 
 ### Union
 
+Union, join in dikey olan seklidir diyebiliriz. Yani Tablolari alt alta eklemek icin kullanilir. Field isimlerinin ve sayisinin ortusmesi gerekir.
+
+```abap
+@AbapCatalog.sqlViewName: 'ZUNIONEXAMPLE'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Cross Join Example'
+
+define view Z_unionExample as
+  select from z_table1_name
+{
+  col1
+}
+where col1 > 10
+union all select from z_table2_name    //Unique verileri cekmek icin 'All' ifadesi kaldirilir. 
+{
+  col1
+}
+where col1 < 10
+union all select from z_table3_name
+{
+  col1
+}
+
+```
+
+<details>
+  <summary>Detay Bilgi</summary>
+  <br>
+
+  UNION, iki veya daha fazla SELECT sorgusunun sonuçlarını birleştirmek için kullanılır. Bu operatör, sonuç kümelerini yinelerken tekrarlanan satırları kaldırarak tek bir sonuç kümesi oluşturur. İşte UNION operatörü hakkında kısa bilgiler:
+
+  - UNION operatörü, birleştirilen SELECT sorgularının sonuç kümesini sıralı ve benzersiz bir sonuç kümesine dönüştürür. Yani aynı satırlar yalnızca bir kez görünür.
+  - UNION operatörü, iki veya daha fazla SELECT sorgusu arasında kullanılabilir. Bu sorguların sütun sayıları ve sıralama düzenleri uygun olmalıdır.
+  - UNION operatörü, sorguların sonuçlarını birleştirirken sütun adları veya sütun türleriyle ilgilenmez. Sadece sıra sayısı ve sıra düzeni önemlidir.
+
+    
+  <br>
+    Union Ornekleri
+  <br>
+  <br>
+  
+```abap
+@AbapCatalog.sqlViewName: 'DEMOCDSUNIONTYPE'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+define view Demo_Cds_Union_Element_Type(
+    id,
+    col1,
+    col2
+  )
+  as select from
+    demo_expressions
+    {
+      id,
+      num1                      as col1,
+      cast( num1 as abap.int8 ) as col2
+    }
+union all select from
+  demo_expressions
+    {
+      id,
+      numlong1 as col1,
+      numlong1 as col2
+    }
+
+```
+  <br>
+
+  ```abap
+@AbapCatalog.sqlViewName: '...'
+define view ... ( c1, c2, c3, c4 ) as
+  select
+    from demo_join1
+      { a, b, c, d }
+    union
+      select
+        from demo_join2
+          { d, e, f, g }
+
+```
+
+  <br>
+
+  ```abap
+@AbapCatalog.sqlViewName: '...'
+define view ... as
+  select
+    from demo_join1
+      { a as c1, b as c2, c as c3, d as c4 }
+    union
+      select
+        from demo_join2
+          { d as c1, e as c2, f as c3, g as c4 }
+
+```
+
+<br>
+    Union SFlight Ornegi
+  <br>
+  <br>
+  
+```abap
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Union Example'
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+    serviceQuality: #X,
+    sizeCategory: #S,
+    dataClass: #MIXED
+}
+define view entity zjp_cds_union
+  as select from /dmo/flight
+{
+  key carrier_id     as CarrierId,
+  key connection_id  as ConnectionId,
+  key flight_date    as FlightDate,
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      price          as Price,
+      currency_code  as CurrencyCode,
+      plane_type_id  as PlaneTypeId,
+      seats_max      as SeatsMax,
+      seats_occupied as SeatsOccupied
+}
+where
+  currency_code = 'USD'
+
+union all
+
+select from /dmo/flight
+{
+  key carrier_id     as CarrierId,
+  key connection_id  as ConnectionId,
+  key flight_date    as FlightDate,
+      price          as Price,
+      currency_code  as CurrencyCode,
+      plane_type_id  as PlaneTypeId,
+      seats_max      as SeatsMax,
+      seats_occupied as SeatsOccupied
+}
+where
+  currency_code = 'EUR'
+
+```
+  <br>
+  <br>
+    Sonuc
+  <br>  
+    <img src="./ScreenShots/unionSflightSonuc.jpg" alt="Sonuc" >
+  
+
+
+</details>
+
+
 ### Associations
 
 
