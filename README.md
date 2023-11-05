@@ -560,5 +560,92 @@ where
 
 ### Associations
 
+Associations, bir Database Table veya başka bir CDS View gibi objeler arasındaki ilişkileri tanımlar. Tipik anlamda Left Outer Join gibi calisir. Associations icin Join-On-Demand ifadesi de kullanilir. CDS view in çıktısı yalnızca SOL tablodaki verileri gösterir. İlgili tablodaki veriler yalnızca talep üzerine gösterilir. 
+  <br>
+
+Bir Associations örnegi incelersek ;
+
+
+```abap
+@AbapCatalog.sqlViewName: 'ZFRT_ASSOC_1' 
+@AccessControl.authorizationCheck: #NOT_REQUIRED 
+@EndUserText.label: 'Simple Association' 
+define view zfrt_cds_association_1 as select from scarr 
+association [1..*] to spfli as _spfli 
+    on $projection.carrid = _spfli.carrid { 
+    key scarr.carrid as carrid, 
+    scarr.carrname as Carrname, 
+    scarr.currcode as Currcode, 
+    _spfli                        //Exposed association 
+} 
+```
+
+
+Kodu incelersek;
+    - Soldaki tablo SCARR'dır – buna Primary Table diyeceğiz
+   - Sağdaki tablo SPFLI'dir – buna Associated Table diyeceğiz
+   - Join yerine kardinaliteyle (cardinality) ilişkilendirme [1..*] kullanılır.
+   - Associated table a _ (alt çizgi) ile başlayan takma ad verilir. Bu zorunlu değildir, yalnızca bir adlandırma kuralıdır.
+   - ON condition, primary table scarr dan gelen Projection listteki bir alanı kullanır.
+   - Sonunda association yani _spfli ortaya çıkar.
+   - Key seçilmesi zorunludur (mandatory); anahtar seçilmezse, association çağrıldığında associated table daki tüm girişler döndürülür.
+   - CDS görünümünün çıktısı yalnızca SOL tablodaki verileri gösterir. İlgili tablodaki veriler yalnızca talep üzerine gösterilir.
+
+
+
+
+  <br>  
+    <img src="./ScreenShots/asso1.jpg" alt="Sonuc" >
+  <br>  
+    <img src="./ScreenShots/asso2.jpg" alt="Sonuc" >
+  <br>  
+  <br>  
+
+  CDS View in Abap kodunda kullanimi;
+
+
+```abap
+"Select Queries on Association view
+"Without association fields 
+    SELECT carrid, carrname 
+       FROM zjp_cds_association_1 
+       INTO TABLE @DATA(carriers). 
+    IF sy-subrc EQ 0. 
+      cl_demo_output=>display( carriers ). 
+    ENDIF.
+
+"With association fields
+    SELECT
+       FROM zjp_cds_association_1\_spfli as flight
+       FIELDS flight~carrid, flight~connid
+       INTO TABLE @DATA(flights).
+    IF sy-subrc EQ 0.
+      cl_demo_output=>display( flights ).
+    ENDIF.
+```
+
+Multiple Associations örnegi;
+
+```abap
+@AbapCatalog.sqlViewName: 'ZFRT_ASSOC_1' 
+@AccessControl.authorizationCheck: #NOT_REQUIRED 
+@EndUserText.label: 'Simple Association' 
+define view zfrt_cds_association_1 as select from scarr 
+association [1..*] to spfli as _spfli 
+    on $projection.carrid = _spfli.carrid 
+    association [1..*] to sflight as _sflight 
+    on $projection.carrid = _sflight.carrid 
+{ 
+    key scarr.carrid as carrid, 
+    scarr.carrname as Carrname, 
+    scarr.currcode as Currcode, 
+    _spfli,                        //Exposed association 
+    _sflight                       //Exposed association 
+}
+```
+
+
+
+    
 
 <p align="right"><a href="#top">⬆️ back to top</a></p>
