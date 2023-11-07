@@ -582,7 +582,7 @@ association [1..*] to spfli as _spfli
 
 
 Kodu incelersek;
-    - Soldaki tablo SCARR'dır – buna Primary Table diyeceğiz
+   - Soldaki tablo SCARR'dır – buna Primary Table diyeceğiz
    - Sağdaki tablo SPFLI'dir – buna Associated Table diyeceğiz
    - Join yerine kardinaliteyle (cardinality) ilişkilendirme [1..*] kullanılır.
    - Associated table a _ (alt çizgi) ile başlayan takma ad verilir. Bu zorunlu değildir, yalnızca bir adlandırma kuralıdır.
