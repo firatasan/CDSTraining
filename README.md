@@ -17,6 +17,7 @@ CDS Training
   - [Union](#union)
   - [Associations](#associations)
 - [Annotations](#annotations)
+- [Parameters](#parameters)
 
 
 
@@ -652,9 +653,22 @@ CDS kullanırken, verilere ilişkin ek bilgileri saklamak ve işlemek için "ann
 <br>
 
 <b>@AbapCatalog.sqlViewName:</b> SQL görünüm adını tanımlar. Bu annotation, CDS görünümünün altındaki SQL tablosunun adını belirler.
+<br>
+<b>@AbapCatalog.compiler.compareFilter:</b> Derleme sırasında karşılaştırma filtresini etkinleştirir veya devre dışı bırakır. Etkinleştirilirse, veriler daha fazla kontrol edilir ve hata tespit edilebilir.
+<br>
+<b>@AccessControl.authorizationCheck:</b> Erişim kontrolünün etkinleştirilip etkinleştirilmeyeceğini belirler. Bu, kullanıcıların CDS görünümüne erişimini kontrol edebilir.
+<br>
+<b>@EndUserText.label:<b> CDS görünümünün kullanıcı dostu adını belirler. Bu, CDS görünümünün açıklamasını temsil eder.
+<br>
+<b>@EndUserText.description:</b> CDS görünümünün açıklamasını detaylandırır. Kullanıcıların CDS görünümünü daha iyi anlamalarına yardımcı olabilir.
 
 ```abap
 @AbapCatalog.sqlViewName: 'ZEXAMPLE'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Example CDS View'
+@EndUserText.description: 'This is an example CDS view with annotations.'
+
 define view Z_Example as
   select from scarr as airline
   {
@@ -662,22 +676,72 @@ define view Z_Example as
     airline.carrname as CarrierName
   };
 
+
 ```
 
-<b>@AbapCatalog.compiler.compareFilter:</b> Derleme sırasında karşılaştırma filtresini etkinleştirir veya devre dışı bırakır. Etkinleştirilirse, veriler daha fazla kontrol edilir ve hata tespit edilebilir.
+<b>@ObjectModel.readOnly:</b> Bir sütunun sadece okunabilir (readOnly) olduğunu belirten bir annotation. Bu sütun, yazma işlemlerine izin vermez.
+<br>
+<b>@Search.searchable:</b> Bir sütunun aranabilir (searchable) olduğunu belirten bir annotation. Bu, sütunu arama sorguları için kullanılabilir kılar.
+<br>
+
+```abap
+@ObjectModel.readOnly: true
+@Search.searchable: true
+entity ExampleEntity {
+  key id: UUID;
+  name: String(50);
+}
+
+
+```
+
+<b>@ObjectModel.association.type:</b> İki varlık (entity) arasındaki ilişkinin türünü belirleyen bir annotation. Örneğin, "COMPOSITION" veya "AGGREGATION" gibi ilişki türleri kullanılabilir.
+
 
 
 ```abap
+@ObjectModel.association.type: #COMPOSITION
+entity ParentEntity {
+  key id: UUID;
+  children: association [0..*] to ChildEntity on id = parent_id;
+}
+
+entity ChildEntity {
+  key id: UUID;
+  parent_id: UUID;
+}
 
 ```
+
+
+<b>@Semantics.currencyCode:</b> Para birimi sütunu için kullanılan bir annotation. Bu annotation, bir para birimi sütununun hangi para birimini temsil ettiğini belirtir.
+
 
 ```abap
+@Semantics.currencyCode: 'Currency'
+entity SalesData {
+  key id: UUID;
+  amount: Decimal(16, 2);
+  currency: CurrencyCode;
+}
 
 ```
+
+<b>@Semantics.quantity:</b> Miktar sütunu için kullanılan bir annotation. Bu, miktar sütununun bir niceliği temsil ettiğini belirtir.
+
 
 ```abap
+@Semantics.quantity.unitOfMeasure: 'QuantityUnit'
+entity Stock {
+  key id: UUID;
+  quantity: Decimal(16, 2);
+  quantityUnit: UnitOfMeasure;
+}
 
 ```
+
+# Parameters
+
 
 ```abap
 
