@@ -150,6 +150,11 @@ define view demo_cds_sql_functions_num
 - DATS_ADD_MONTHS(date,months,on_error)    ay ekleme
 - DATS_ADD_MONTHS(date,months,on_error)    ay cikarma eksi ay ekleme
 
+<br>
+<a href="https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenddic_date_time_functions.htm">SAP Docu</a>
+<br>
+<br>
+
 ```abap
   key col2                                                      as Col2,
       datecol                                                   as Datecol,
