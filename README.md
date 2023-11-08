@@ -651,6 +651,11 @@ association [1..*] to spfli as _spfli
 CDS kullanırken, verilere ilişkin ek bilgileri saklamak ve işlemek için "annotations" denilen özel işaretleme özelliklerini kullanabilirsiniz. Annotations, CDS tanımlarına ek bilgi eklemenizi sağlayan işaretleme özellikleridir. Bu bilgiler, verilere ilişkin açıklamaları, işleme kurallarını, düzenlemeleri ve hatta UI ekranlarının görünümünü tanımlamak için kullanılabilir. Annotations, veri modelinizi ve iş mantığınızı açıklığa kavuşturabilir ve diğer geliştiricilerin projenizi daha iyi anlamasına yardımcı olabilir.
 
 <br>
+800 den fazla annotation bulunuyor. Bazilari asagida aciklanmistir. Detayli bilgi icin ;
+<br>
+<a href="https://help.sap.com/doc/abapdocu_756_index_htm/7.56/en-US/abencds_annotations_frmwrk_tables.htm">SAP documentation</a>
+
+<br>
 
 <b>@AbapCatalog.sqlViewName:</b> SQL görünüm adını tanımlar. Bu annotation, CDS görünümünün altındaki SQL tablosunun adını belirler.
 <br>
