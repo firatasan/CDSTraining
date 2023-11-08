@@ -569,6 +569,10 @@ where
 
 Associations, bir Database Table veya başka bir CDS View gibi objeler arasındaki ilişkileri tanımlar. Tipik anlamda Left Outer Join gibi calisir. Associations icin Join-On-Demand ifadesi de kullanilir. CDS view in çıktısı yalnızca SOL tablodaki verileri gösterir. İlgili tablodaki veriler yalnızca talep üzerine gösterilir. 
   <br>
+  <br>
+<a href="https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abencds_association_v2.htm">SAP Docu</a>
+<br>
+<br>
 
 Bir Associations örnegi incelersek ;
 
