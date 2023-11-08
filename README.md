@@ -16,6 +16,7 @@ CDS Training
     - [cross join example](#cross-join-example)
   - [Union](#union)
   - [Associations](#associations)
+- [Annotations](#annotations)
 
 
 
@@ -644,7 +645,43 @@ association [1..*] to spfli as _spfli
 }
 ```
 
+# Annotations
 
+CDS kullanırken, verilere ilişkin ek bilgileri saklamak ve işlemek için "annotations" denilen özel işaretleme özelliklerini kullanabilirsiniz. Annotations, CDS tanımlarına ek bilgi eklemenizi sağlayan işaretleme özellikleridir. Bu bilgiler, verilere ilişkin açıklamaları, işleme kurallarını, düzenlemeleri ve hatta UI ekranlarının görünümünü tanımlamak için kullanılabilir. Annotations, veri modelinizi ve iş mantığınızı açıklığa kavuşturabilir ve diğer geliştiricilerin projenizi daha iyi anlamasına yardımcı olabilir.
+
+<br>
+
+<b>@AbapCatalog.sqlViewName:</b> SQL görünüm adını tanımlar. Bu annotation, CDS görünümünün altındaki SQL tablosunun adını belirler.
+
+```abap
+@AbapCatalog.sqlViewName: 'ZEXAMPLE'
+define view Z_Example as
+  select from scarr as airline
+  {
+    key airline.carrid as CarrierID,
+    airline.carrname as CarrierName
+  };
+
+```
+
+<b>@AbapCatalog.compiler.compareFilter:</b> Derleme sırasında karşılaştırma filtresini etkinleştirir veya devre dışı bırakır. Etkinleştirilirse, veriler daha fazla kontrol edilir ve hata tespit edilebilir.
+
+
+```abap
+
+```
+
+```abap
+
+```
+
+```abap
+
+```
+
+```abap
+
+```
 
     
 
