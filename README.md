@@ -658,7 +658,7 @@ CDS kullanırken, verilere ilişkin ek bilgileri saklamak ve işlemek için "ann
 <br>
 <b>@AccessControl.authorizationCheck:</b> Erişim kontrolünün etkinleştirilip etkinleştirilmeyeceğini belirler. Bu, kullanıcıların CDS görünümüne erişimini kontrol edebilir.
 <br>
-<b>@EndUserText.label:<b> CDS görünümünün kullanıcı dostu adını belirler. Bu, CDS görünümünün açıklamasını temsil eder.
+<b>@EndUserText.label:</b> CDS görünümünün kullanıcı dostu adını belirler. Bu, CDS görünümünün açıklamasını temsil eder.
 <br>
 <b>@EndUserText.description:</b> CDS görünümünün açıklamasını detaylandırır. Kullanıcıların CDS görünümünü daha iyi anlamalarına yardımcı olabilir.
 
