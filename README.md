@@ -744,7 +744,32 @@ entity Stock {
 
 
 ```abap
+@AbapCatalog.sqlViewName: 'YFA_CDS_EX3'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: false
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Demo Association'
+define view yfa_ddl_ex3
+    with parameters parameter_name : meins
+ as select from mara
+{
+    matnr,
+    matkl,
+    mtart
 
+}
+where meins = $parameters.parameter_name
+```
+
+Parametreli CDS'in ABAP tarafinda kullanilmasi;
+
+```abap
+
+SELECT * FROM yfa_ddl_ex3       ( parameter_name = LE )
+ INTO TABLE @DATA(lt_table).
+IF sy-subrc EQ 0.
+    cl_demo_output=>display( lt_table ).
+ENDIF.
 ```
 
     
