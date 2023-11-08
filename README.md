@@ -37,6 +37,7 @@ CDS Training
 <br>
 <a href="https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abencds_arithmetic_expression_v2.htm">SAP Docu</a>
 <br>
+<br>
 
 
 ```abap
