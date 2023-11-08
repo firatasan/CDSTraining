@@ -34,6 +34,10 @@ CDS Training
 - Division  : yandaki sayiya bolumu ve virgulden sonra kac sayi 
 - Round     : yanindaki rakam kadar yuvarlama
 
+<br>
+<a href="https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abencds_arithmetic_expression_v2.htm">SAP Docu</a>
+<br>
+
 
 ```abap
 @AbapCatalog.sqlViewName: 'DEMO_CDS_NUMFUNC'
