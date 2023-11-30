@@ -18,6 +18,7 @@ CDS Training
   - [Associations](#associations)
 - [Annotations](#annotations)
 - [Parameters](#parameters)
+- [DEMO CDS Bulma](#Demo-CDS)
 
 
 
@@ -790,6 +791,10 @@ IF sy-subrc EQ 0.
     cl_demo_output=>display( lt_table ).
 ENDIF.
 ```
+# #Demo-CDS
+
+SAP'in olusturdugu DEMO CDS'lere erismek icin "ctrl + shift + a" ile Abap Development Object arama sayfasi acilir ve "*demo* type:ddls" yazilir.
+
 
     
 
