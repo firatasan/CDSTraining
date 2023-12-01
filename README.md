@@ -117,6 +117,8 @@ define view demo_cds_sql_functions_num
 ```
 
 
+<p align="right"><a href="#top">⬆️ back to top</a></p>
+
 
 ## String Functions
 
@@ -141,6 +143,8 @@ define view demo_cds_sql_functions_num
       ltrim(col2, 'F')                  as leftrim_col,
       rtrim(col2, 'D')                  as righttrim_col
 ```
+
+<p align="right"><a href="#top">⬆️ back to top</a></p>
 
 ## Date Functions
 
@@ -172,6 +176,8 @@ define view demo_cds_sql_functions_num
       dats_add_months(datecol, -3, 'NULL')                      as ucAyCik
 ```
 
+<p align="right"><a href="#top">⬆️ back to top</a></p>
+
 ## Cast Functions
 
 ```abap
@@ -180,6 +186,8 @@ define view demo_cds_sql_functions_num
       '17091983'                      as colTest1,
       cast('17091983' as abap.dats)   as colTest2
 ```
+
+<p align="right"><a href="#top">⬆️ back to top</a></p>
 
 ## Aggregate Functions
 
@@ -209,6 +217,7 @@ define view demo_cds_sql_functions_num
 group by
   vbeln
 ```
+<p align="right"><a href="#top">⬆️ back to top</a></p>
 
 ## Join Union Associations
 
@@ -414,6 +423,8 @@ CROSS JOIN departments;
 
 </details>
 
+<p align="right"><a href="#top">⬆️ back to top</a></p>
+
 ### Union
 
 Union, join in dikey olan seklidir diyebiliriz. Yani Tablolari alt alta eklemek icin kullanilir. Field isimlerinin ve sayisinin ortusmesi gerekir.
@@ -570,6 +581,7 @@ where
 
 </details>
 
+<p align="right"><a href="#top">⬆️ back to top</a></p>
 
 ### Associations
 
@@ -660,6 +672,7 @@ association [1..*] to spfli as _spfli
     _sflight                       //Exposed association 
 }
 ```
+<p align="right"><a href="#top">⬆️ back to top</a></p>
 
 # Annotations
 
@@ -759,6 +772,8 @@ entity Stock {
 }
 
 ```
+
+<p align="right"><a href="#top">⬆️ back to top</a></p>
 
 # Parameters
 
